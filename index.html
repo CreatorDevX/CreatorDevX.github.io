@@ -1,18 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CreatorDevX — Card</title>
+  <style>
+    :root{--bg:#0f1113;--card:#0f1720;--muted:#9aa4ad;--accent:#62f7d4}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#071018 0%, #0f1113 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#e6eef2;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .card{
+      width:min(520px,92vw);
+      background:radial-gradient(1200px 400px at 10% 10%, rgba(98,247,212,0.04), transparent 10%), var(--card);
+      border:1px solid rgba(255,255,255,0.04);
+      padding:28px;
+      border-radius:14px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .avatar{
+      width:84px;height:84px;border-radius:12px;
+      background:linear-gradient(135deg,#0b1220,#12202a);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:28px;color:var(--accent);
+      border:1px solid rgba(98,247,212,0.08);
+      flex:0 0 84px;
+    }
+
+    .meta{flex:1}
+    .name{font-size:20px;font-weight:700;color:#ffffff;margin-bottom:6px}
+    .role{font-size:13px;color:var(--muted);margin-bottom:12px}
+    .desc{font-size:14px;color:#cfe8e2;line-height:1.4}
+
+    .actions{display:flex;gap:10px;margin-left:12px}
+    .btn{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;font-size:13px;color:#dff6f0;text-decoration:none;
+      transition:all .14s ease;display:inline-flex;align-items:center;gap:8px
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+
+    @media (max-width:520px){
+      .card{flex-direction:column;align-items:flex-start;padding:20px}
+      .actions{width:100%;justify-content:space-between;margin-top:8px}
+    }
+  </style>
+</head>
 <body>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB9GL89J6X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZB9GL89J6X');
-</script>
-
-
-  <h1>Hello world. We all think, therefore we ask you.</h1>
-  <p>september-awarded.gl.at.ply.gg:35150</p>
+  <main class="card" aria-labelledby="name">
+    <div class="avatar" aria-hidden="true">CDX</div>
+    <div class="meta">
+      <div id="name" class="name">CreatorDevX</div>
+      <div class="role">AI Developer · Researcher</div>
+      <div class="desc">Focused on building reliable AI systems and running reproducible experiments. Open to collaboration and code-first research.</div>
+    </div>
+    <div class="actions" role="group" aria-label="actions">
+      <a class="btn" href="https://github.com/CreatorDevX/" onclick="event.preventDefault()">GitHub</a>
+      <a class="btn" href="Null" onclick="event.preventDefault()">Contact</a>
+    </div>
+  </main>
 </body>
 </html>
